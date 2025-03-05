@@ -29,7 +29,7 @@ export const Navbar = () => {
     <header 
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        scrolled ? "py-3 bg-white/10 backdrop-blur-lg border-b border-white/10" : "py-5"
+        scrolled ? "py-3 bg-black/80 backdrop-blur-lg" : "py-5"
       )}
     >
       <nav className="container mx-auto px-6 flex items-center justify-between">

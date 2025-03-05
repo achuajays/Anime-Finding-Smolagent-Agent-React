@@ -35,23 +35,26 @@ const Home = () => {
     <PageLayout>
       <div className="relative min-h-screen">
         {/* Background with blur overlay */}
-        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-black/40 via-black/20 to-transparent">
+        <div className="absolute inset-0 -z-10">
           <div 
-            className="absolute inset-0 bg-cover bg-center opacity-30"
+            className="absolute inset-0 bg-cover bg-center opacity-20"
             style={{ 
-              backgroundImage: "url('https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80')" 
+              backgroundImage: "url('https://cdn.myanimelist.net/images/anime/1223/96541.jpg')" 
             }}
           ></div>
-          <div className="absolute inset-0 bg-gradient-to-b from-black via-black/80 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black via-background to-background"></div>
         </div>
 
         <div className="container mx-auto px-6">
           {/* Hero Section */}
           <section className="py-20 md:py-32 flex flex-col items-center text-center">
             <div className="max-w-3xl mx-auto">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 animate-fade-in">
-                Discover Anime with <span className="text-accent">AI-Powered</span> Precision
-              </h1>
+              <div className="mb-6 flex flex-col gap-1 animate-fade-in">
+                <div className="uppercase tracking-wider text-sm font-medium text-accent">Adventure • Fantasy • Action</div>
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold">
+                  Discover Your Next <span className="text-accent">Anime</span> Adventure
+                </h1>
+              </div>
               <p className="text-lg text-slate-300 mb-8 max-w-2xl mx-auto animate-fade-in" style={{ animationDelay: "0.1s" }}>
                 Find your next favorite anime series using natural language queries. Our AI understands what you're looking for and delivers personalized recommendations.
               </p>
@@ -85,7 +88,7 @@ const Home = () => {
           {hasSearched && (
             <section className="py-10">
               <div className="mb-8">
-                <h2 className="text-2xl font-bold mb-2">Search Results</h2>
+                <h2 className="text-2xl font-bold mb-2">Anime Results</h2>
                 <div className="w-20 h-1 bg-accent rounded-full"></div>
               </div>
               
