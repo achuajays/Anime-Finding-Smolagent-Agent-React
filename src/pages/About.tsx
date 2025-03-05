@@ -90,25 +90,7 @@ const About = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <TeamMember 
-              name="Alex Johnson"
-              role="Founder & Lead Developer"
-              description="Alex created AnimeQuest out of a passion for anime and AI technology. With over 10 years of software development experience, he leads our technical vision."
-            />
-            
-            <TeamMember 
-              name="Sasha Kim"
-              role="AI Engineer"
-              description="Sasha specializes in natural language processing and is responsible for the intelligent search algorithms that power AnimeQuest's recommendations."
-            />
-            
-            <TeamMember 
-              name="Maya Patel"
-              role="Frontend Developer"
-              description="Maya crafts the beautiful, intuitive user interfaces that make AnimeQuest a pleasure to use. She's constantly improving the user experience."
-            />
-          </div>
+          {/* The grid div that was here has been removed */}
         </section>
         
         {/* Contact Section */}
