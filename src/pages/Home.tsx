@@ -47,7 +47,7 @@ const Home = () => {
 
         <div className="container mx-auto px-6">
           {/* Hero Section */}
-          <section className="py-20 md:py-32 flex flex-col items-center text-center">
+          <section className="py-12 md:py-20 flex flex-col items-center text-center">
             <div className="max-w-3xl mx-auto">
               <div className="mb-6 flex flex-col gap-1 animate-fade-in">
                 <div className="uppercase tracking-wider text-sm font-medium text-accent">Adventure • Fantasy • Action</div>
@@ -63,32 +63,14 @@ const Home = () => {
                 <SearchBar onSearch={handleSearch} isLoading={loading} />
                 <SampleQueries onSelect={handleSearch} />
               </div>
-              
-              <div className="mt-12 grid grid-cols-3 gap-6 max-w-lg mx-auto">
-                <FeatureItem 
-                  icon={<Search className="w-5 h-5 text-accent" />}
-                  text="Smart Search"
-                  delay="0.3s"
-                />
-                <FeatureItem 
-                  icon={<Zap className="w-5 h-5 text-accent" />}
-                  text="Fast Results"
-                  delay="0.4s"
-                />
-                <FeatureItem 
-                  icon={<Upload className="w-5 h-5 text-accent" />}
-                  text="Latest Data"
-                  delay="0.5s"
-                />
-              </div>
             </div>
           </section>
 
-          {/* Results Section */}
+          {/* Results Section - Moved up right after the search bar */}
           {hasSearched && (
-            <section className="py-10">
-              <div className="mb-8">
-                <h2 className="text-2xl font-bold mb-2">Anime Results</h2>
+            <section className="py-6 mb-10 animate-fade-in" style={{ animationDelay: "0.3s" }}>
+              <div className="mb-6">
+                <h2 className="text-2xl font-bold">Anime Results</h2>
                 <div className="w-20 h-1 bg-accent rounded-full"></div>
               </div>
               
@@ -107,6 +89,27 @@ const Home = () => {
               )}
             </section>
           )}
+          
+          {/* Features Section - Moved below results */}
+          <section className="py-8 flex flex-col items-center justify-center">
+            <div className="mt-6 grid grid-cols-3 gap-6 max-w-lg mx-auto">
+              <FeatureItem 
+                icon={<Search className="w-5 h-5 text-accent" />}
+                text="Smart Search"
+                delay="0.3s"
+              />
+              <FeatureItem 
+                icon={<Zap className="w-5 h-5 text-accent" />}
+                text="Fast Results"
+                delay="0.4s"
+              />
+              <FeatureItem 
+                icon={<Upload className="w-5 h-5 text-accent" />}
+                text="Latest Data"
+                delay="0.5s"
+              />
+            </div>
+          </section>
         </div>
       </div>
     </PageLayout>
