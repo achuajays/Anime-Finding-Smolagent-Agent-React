@@ -1,27 +1,33 @@
 
 import { useState } from "react";
 import { toast } from "sonner";
+import { useNavigate } from "react-router-dom";
 import { searchAnime } from "@/services/animeService";
 import { Anime } from "@/types/anime";
 import SearchBar from "@/components/ui-custom/SearchBar";
-import AnimeCard from "@/components/ui-custom/AnimeCard";
 import SampleQueries from "@/components/ui-custom/SampleQueries";
 import PageLayout from "@/components/layout/PageLayout";
 import { Upload, Zap, Search } from "lucide-react";
 
 const Home = () => {
-  const [results, setResults] = useState<Anime[]>([]);
   const [loading, setLoading] = useState(false);
-  const [hasSearched, setHasSearched] = useState(false);
+  const navigate = useNavigate();
 
   const handleSearch = async (query: string) => {
     setLoading(true);
     try {
       const response = await searchAnime({ query });
-      setResults(response.results);
-      setHasSearched(true);
+      
       if (response.results.length === 0) {
         toast.info("No results found for your query.");
+      } else {
+        // Navigate to results page with the search results and query
+        navigate("/results", { 
+          state: { 
+            results: response.results,
+            query: query
+          } 
+        });
       }
     } catch (error) {
       console.error("Search error:", error);
@@ -65,32 +71,8 @@ const Home = () => {
               </div>
             </div>
           </section>
-
-          {/* Results Section - Moved up right after the search bar */}
-          {hasSearched && (
-            <section className="py-6 mb-10 animate-fade-in" style={{ animationDelay: "0.3s" }}>
-              <div className="mb-6">
-                <h2 className="text-2xl font-bold">Anime Results</h2>
-                <div className="w-20 h-1 bg-accent rounded-full"></div>
-              </div>
-              
-              {loading ? (
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {[...Array(3)].map((_, i) => (
-                    <div key={i} className="glass-card animate-pulse h-[450px]"></div>
-                  ))}
-                </div>
-              ) : (
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {results.map((anime) => (
-                    <AnimeCard key={anime.id} anime={anime} />
-                  ))}
-                </div>
-              )}
-            </section>
-          )}
           
-          {/* Features Section - Moved below results */}
+          {/* Features Section */}
           <section className="py-8 flex flex-col items-center justify-center">
             <div className="mt-6 grid grid-cols-3 gap-6 max-w-lg mx-auto">
               <FeatureItem 
