@@ -29,8 +29,8 @@ AnimeQuest is an AI-powered anime discovery platform that helps users find their
 
 1. Clone the repository
 ```bash
-git clone https://github.com/yourusername/animequest.git
-cd animequest
+git clone https://github.com/achuajays/Anime-Finding-Smolagent-Agent-React.git
+cd Anime-Finding-Smolagent-Agent-React
 ```
 
 2. Install dependencies
