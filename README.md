@@ -1,8 +1,6 @@
 
 # AnimeQuest
 
-![AnimeQuest](public/og-image.png)
-
 AnimeQuest is an AI-powered anime discovery platform that helps users find their next favorite anime series using natural language queries. The application understands what you're looking for and delivers personalized recommendations.
 
 ## Features
