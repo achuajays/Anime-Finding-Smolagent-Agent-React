@@ -26,7 +26,7 @@ const AnimeResults = () => {
 
   return (
     <PageLayout>
-      <div className="container mx-auto px-6 py-8">
+      <div className="container mx-auto px-6 py-8 flex flex-col min-h-[calc(100vh-200px)]">
         <Button 
           variant="ghost" 
           className="mb-6 flex items-center gap-2 text-slate-300 hover:text-white" 
@@ -41,7 +41,7 @@ const AnimeResults = () => {
           <div className="w-32 h-1 bg-accent rounded-full"></div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="flex-grow">
           {results.map((anime: Anime) => (
             <AnimeCard key={anime.id} anime={anime} />
           ))}

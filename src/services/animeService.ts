@@ -20,15 +20,14 @@ export const searchAnime = async (request: SearchRequest): Promise<SearchRespons
     
     const data = await response.json();
     
-    // Transform the API response to match our expected format
-    // The API returns {response: string} but we need {results: Anime[]}
+    // Simplified response with just the text
     return {
       results: [{
         id: 1,
-        title: data.response.split("is a")[0].trim() || "Anime Result",
-        image_url: "https://cdn.myanimelist.net/images/anime/1223/96541.jpg", // Default placeholder
+        title: "Anime Result",
+        image_url: "", // Empty as we don't need it
         synopsis: data.response,
-        genres: ["Comedy", "Action", "Adventure"],
+        genres: [],
       }]
     };
   } catch (error) {
