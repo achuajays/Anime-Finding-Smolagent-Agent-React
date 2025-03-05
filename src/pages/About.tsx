@@ -1,7 +1,7 @@
 
 import PageLayout from "@/components/layout/PageLayout";
 import StatCard from "@/components/ui-custom/StatCard";
-import { Server, Code, Database, Bot, Users, Award } from "lucide-react";
+import { Server, Code, Database, Bot, Users, Award, Search, Mail } from "lucide-react";
 
 const About = () => {
   return (
@@ -28,7 +28,6 @@ const About = () => {
               label="Daily Searches" 
               icon={<Search className="w-5 h-5" />}
               className="floating-card"
-              // Add animation delay for staggered effect
               style={{ animationDelay: "0.2s" }}
             />
             <StatCard 
@@ -36,7 +35,6 @@ const About = () => {
               label="Search Accuracy" 
               icon={<Award className="w-5 h-5" />}
               className="floating-card"
-              // Add animation delay for staggered effect
               style={{ animationDelay: "0.4s" }}
             />
           </div>
